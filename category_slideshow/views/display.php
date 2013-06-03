@@ -31,7 +31,7 @@ min-height:300px;
                   <p><?php echo substr(strip_tags($post_widget->body),0,50) ;?></p>
                 </div>
               </div>
-
+            <?php  break;?>
             <?php endforeach;?>
             <?php endforeach;?>
             </div>

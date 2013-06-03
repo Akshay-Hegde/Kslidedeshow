@@ -25,8 +25,8 @@ class Widget_category_slideshow extends Widgets
 	public $version = '1.0.0';
 
 	public $title = array(
-		'en' => 'KSlideshow posts',
-		'fr' => 'KSlides  articles',
+		'en' => 'Slideshow  posts',
+		'fr' => 'Slides  articles',
 	
 	);
 
