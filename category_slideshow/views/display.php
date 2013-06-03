@@ -1,7 +1,7 @@
 <style>
 .carousel-inner > .item img
 {
-min-width:100%;
+width:100%;
 max-height:300px;
 min-height:300px;
 }
@@ -23,21 +23,31 @@ min-height:300px;
 		
          	// Find all images
 	         foreach($html->find('img') as $element):
+	               //check if the image is found
+	               if( $element->src!=' ' or  $element->src!=NULL):
                     ?>
               <div class="item">
+               <a href="<?php echo 'blog/'.date('Y/m', $post_widget->created_on) .'/'.$post_widget->slug;?>">
                 <img src="<?php echo $element->src;?>" />
+               </a>
                 <div class="carousel-caption">
-                  <h4><?php echo $post_widget->title;?></h4>
-                  <p><?php echo substr(strip_tags($post_widget->body),0,50) ;?></p>
+                  <h4><a href="<?php echo 'blog/'.date('Y/m', $post_widget->created_on) .'/'.$post_widget->slug;?>">
+                  <?php echo $post_widget->title;?>
+                  </a></h4>
+                  <p><?php echo substr(strip_tags($post_widget->body),0,50) ;?>
+                  <a href="<?php echo 'blog/'.date('Y/m', $post_widget->created_on) .'/'.$post_widget->slug;?>">...
+                  </a>
+                  </p>
                 </div>
               </div>
+             <?php endif;?>
             <?php  break;?>
             <?php endforeach;?>
             <?php endforeach;?>
             </div>
 
-            <a class="left carousel-control" href="#myCarousel" data-slide="prev"></a>
-            <a class="right carousel-control" href="#myCarousel" data-slide="next"></a>
+            <a class="left carousel-control" href="#myCarousel" data-slide="prev">&lsaquo;</a>
+            <a class="right carousel-control" href="#myCarousel" data-slide="next">&rsaquo;</a>
           </div>
           </div>
 
